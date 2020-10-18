@@ -1,0 +1,89 @@
+body{
+	/*设置body的最小高度*/
+	min-height: 900px;
+	/*设置背景色:径向渐变*/
+	background:radial-gradient(#fff,#999);
+}
+
+#app{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-350px 0 0 -225px;
+	width:450px;
+	height:700px;
+	background-color:rgba(39, 174, 96,.8);
+	box-shadow:10px 10px 20px rgba(0,0,0,.5);
+}
+
+.header{
+	height:60px;
+	line-height: 60px;
+	text-align:center;
+	font-size: 1.2rem;
+	/*设置字符间距*/
+	letter-spacing: 5px;
+	text-shadow: 0 0 20px rgba(0,0,0,.8);
+	color:#eee;
+	background: rgb(52, 152, 219);
+}
+
+
+/*
+ rgb(0,0,0)~rgb(255,255,255)
+ #000~#fff
+ #000000~#ffffff
+ 实现列表区域和底部的基础样式:
+   1.列表区域高度为：560像素
+   2.底部高度为：80像素
+   3.并为其设置背景色
+   4.在列表区域实现一首歌曲布局（歌曲名和歌曲大小水平摆放）
+*/
+.list{
+	height: 560px;
+	background:#ccc;
+	overflow-y:scroll;
+}
+
+.item{
+	display: flex;
+	height: 50px;
+	line-height: 50px;
+	color:#333;
+	/*设置底部边框*/
+	border-bottom:1px solid rgba(255,255,255,.2);
+	/*设置鼠标指针为手指效果*/
+	cursor:pointer;
+	transition:all 1s;
+}
+/*伪类选择器*/
+.item:hover{
+	color:#eee;
+	background:rgba(0,0,0,.3);
+}
+.item>div{
+	box-sizing:border-box;
+}
+.item-icon{
+	flex:1;
+	padding:9px;
+}
+.item-name{
+	flex:5;
+	/*以下三行代码用于设置当内容超出宽度时使用省略号代替*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.item-size{
+	flex:1;
+}
+/*伪对象选择器,设置滚动条样式*/
+::-webkit-scrollbar{
+	width:5px;
+	background: #eee;
+}
+::-webkit-scrollbar-thumb{
+	width: 5px;
+	background: #222;
+}
